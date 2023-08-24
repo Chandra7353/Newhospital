@@ -14,6 +14,11 @@ const doctorsignup = new Schema({
     password:{
         type:String,
         required:true
+    },
+    hashotp:{
+      type:String,
+      default:null
+
     }
 
     

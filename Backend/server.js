@@ -1,5 +1,5 @@
 let express =require('express');
-const routes = require('./feature/Doctor/Router/Signup.routes');
+const routes = require('./feature/Doctor/LoginSignup/Router/Signup.routes');
 require('dotenv').config();
 require('./Config/DBConnection')
 
@@ -8,6 +8,7 @@ require('./Config/DBConnection')
 // when we reaced data from mandatory it should be json formate
 app.use(express.json())
 
+//API for doctor module
 app.use("/api/doctor", routes)
 
 // if user enter wrong url on the given  this will execute
