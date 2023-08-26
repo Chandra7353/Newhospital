@@ -1,5 +1,10 @@
 let express =require('express');
+<<<<<<< Updated upstream
 const routes = require('./feature/Doctor/LoginSignup/Router/Signup.routes');
+=======
+const cors = require('cors');
+const routes = require('./feature/Doctor/Router/Signup.routes');
+>>>>>>> Stashed changes
 require('dotenv').config();
 require('./Config/DBConnection')
 
