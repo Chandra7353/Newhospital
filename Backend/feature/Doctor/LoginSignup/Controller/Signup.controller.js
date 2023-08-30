@@ -75,7 +75,7 @@ let doctorlogin = async (req,res,next)=>{
 
 }
 
-let getalldocotr = async (req, res, next)=>{
+let getalldoctor = async (req, res, next)=>{
 
     try{
         let alldoctors = await Doctor.find({},{_id:0})
@@ -87,8 +87,49 @@ let getalldocotr = async (req, res, next)=>{
     }
 }
 
+let getsingledoctor = async (req, res, next)=>{
+
+    try{
+        let {email,password}=req.body;
+
+        let singledoctore = await Doctor.findOne({email,password})
+
+        if(singledoctore){
+        return res.status(201).json({error:false, message:"doctor found sucessfully", data:singledoctore})
+        }
+        else {
+            return res.status(400).json({error:true, message:"given mailId not found", data:null})
+        }
+
+    }
+    catch(err){
+        next (err)
+    }
+}
+
+let deletedoctor = async (req,res,next)=>{
+    try{
+        let {email}=req.body
+        let deletedoctor = await  Doctor.findOneAndDelete({email})
+        console.log(deletedoctor);
+        if(deletedoctor){
+            return res.status(200).json({error:false, message:"doctor deleted sucessfully", data:deletedoctor})
+            
+        }
+      return res.status(400).json({error:true, message:"No doctor found given mail ID", data:null})
+       
+        
+    }
+    catch(err){
+        next(err)
+    }
+}
+
+
 module.exports={
     doctorsignup,
     doctorlogin,
-    getalldocotr
+    getalldoctor,
+    getsingledoctor,
+    deletedoctor
 }

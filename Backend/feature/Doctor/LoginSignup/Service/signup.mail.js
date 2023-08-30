@@ -20,8 +20,6 @@ require('../Service/signup.otp')
     let mailOptions={
       
       to: email,
-      cc:["swarajswaraj128@gmail.com", "chandrashekar8.cs@gmail.com"],
-      bcc:["shekarchandra8.cs@gmail.com","gurunathkokati@gmail.com"],
       subject:"Sign up Mail",
       html:`<p>Hi ${name},  </p><br />
             <h3>Thank you for registring with us</h3>`

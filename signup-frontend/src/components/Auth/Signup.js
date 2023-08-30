@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import signupImage from '/GNU/Newhospital/signup-frontend/src/assets/images/doc.jpg';
-import '/GNU/Newhospital/signup-frontend/src/assets/styles/Signup.css';
+import signupImage from '../../assets/images/doc.jpg';
+import '../../assets/styles/Signup.css';
 
 const SignUpForm = () => {
   const [, setFormData] = useState({
@@ -17,6 +17,8 @@ const SignUpForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Send the signup data to your backend API
+
+    
     // ...
 
   };
