@@ -1,11 +1,19 @@
 import React from 'react';
-import SignUpForm from './components/Auth/Signup';
+import Signuppage from './components/Auth/Signuppage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Loginpage from './components/Auth/Loginpage';
+
 
 const App = () => {
   return (
+    <BrowserRouter>
     <div className="App">
-      <SignUpForm />
+      <Routes>
+        <Route path='/' element={<Signuppage/>}/> 
+        <Route path='/doctorlogin' element ={<Loginpage/>}/>
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 };
 

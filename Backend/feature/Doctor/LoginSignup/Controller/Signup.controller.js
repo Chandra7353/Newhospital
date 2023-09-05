@@ -79,7 +79,11 @@ let getalldoctor = async (req, res, next)=>{
 
     try{
         let alldoctors = await Doctor.find({},{_id:0})
-        res.status(200).json({error:false, message:" sucessfully getting all doctor details", data:alldoctors})
+
+        if(alldoctors){
+           return  res.status(200).json({error:false, message:" sucessfully getting all doctor details", data:alldoctors})
+        }
+          return res.status(400).json({error:true, message:"failed to fetch doctor "})
 
     }
     catch(err){

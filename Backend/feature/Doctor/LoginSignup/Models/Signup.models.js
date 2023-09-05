@@ -47,4 +47,4 @@ doctorsignup.methods.compareMypassword= async function (password){
   
 }
 
-module.exports=new model("doctor", doctorsignup)
+module.exports = new model("doctor", doctorsignup)

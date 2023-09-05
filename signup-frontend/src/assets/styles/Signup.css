@@ -1,5 +1,5 @@
 /* styles/signup.css */
-.form-container {
+.form-container , .login{
     max-width: 800px;
     margin: 2rem auto;
     border: 1px solid #ccc;
@@ -14,7 +14,7 @@
     text-align: center;
   }
   
-  .form {
+  .form, .loginform {
     padding: 2rem ;
     width: 50%;
     /* max-width: 500px; */
@@ -24,14 +24,14 @@
     align-items:stretch;
  }
   
-  .input {
+  .input, .loginform input {
     padding: 10px;
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
   
-  .button {
+  .button , .loginbutton{
     padding: 10px;
     background-color: #007bff;
     color: #fff;

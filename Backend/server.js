@@ -1,6 +1,9 @@
 let express =require('express');
 const routes = require('./feature/Doctor/LoginSignup/Router/Signup.routes');
+const medicineroutes = require("./feature/Pharmacy/Medicine/Router/Medicine.routes")
+const purchaseroutes =require("./feature/Pharmacy/Purchase/Router/purchase.routes")
 require('dotenv').config();
+const cors =require('cors')
 require('./Config/DBConnection')
 
 //application middleware
@@ -8,8 +11,13 @@ require('./Config/DBConnection')
 // when we reaced data from mandatory it should be json formate
 app.use(express.json())
 
+app.use(cors())
+app.use(express.static("./public"))
+
 //API for doctor module
 app.use("/api/doctor", routes)
+app.use("/api/medicine", medicineroutes)
+app.use("/api/purchase", purchaseroutes)
 
 // if user enter wrong url on the given  this will execute
  app.use("*", (req, res, next)=>{
